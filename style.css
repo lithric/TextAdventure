@@ -4,27 +4,168 @@
 }
 
 body {
-    display: block;
     background-color: #000;
+    color: #0f0;
+    overflow: hidden;
+}
+
+#start_container {
+    display: grid;
+    grid: "options menu"
+          " . credits";
+    transform: translate(-100vw,0);
+    /*animation: name duration timing-function delay iteration-count direction fill-mode;*/
+}
+
+#start_container::-ms-value {
+    color: red;
+}
+
+
+section#options_section {
+    display: block;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
-    color: #0f0;
-    font-size: 20px;
-    font-family: "Press Start 2P";
+    grid-area: options;
+}
+
+section#credits_section {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    grid-area: credits;
+}
+
+section#credits_section button:first-of-type {
+    position: absolute;
+    bottom: 0;
+}
+
+#menu_section {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    grid-area: menu;
+}
+
+#menu_options {
+    display: grid;
+    width: 100px;
+    row-gap: 20px;
+    justify-items: center;
+    justify-self: center;
+    align-self: start;
+}
+
+#play_container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    right: 0;
+    animation: none;
+    background-color: #000;
+}
+
+@keyframes FadeToWhite {
+    0% {
+        background-color: rgba(255,255,255,0);
+    }
+    100% {
+        background-color: rgba(255,255,255,1);
+    }
+}
+
+@keyframes FadeToBlack {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        color: transparent;
+    }
+    100% {
+        background-color: rgb(0, 0, 0);
+        color: #0f0;
+    }
 }
 
 button {
     padding: 10px;
-    font-family: "Press Start 2P";
     color: #0f0;
     background-color: #000;
     border: #0f0 solid 2px;
+    outline: none;
+    font-size: 50px;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 button:hover {
-    width: calc(117.31px * 1.2);
-    height: calc(37px * 1.2);
-    border: #0f0 solid calc(2px * 1.2);
-    font-size: calc((40px / 3) * 1.2);
+    background-color: #111;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #000;
+    transform: scale(0.9);
+}
+
+.title {
+    font-size: 100px;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+@keyframes Menu-Options {
+    0% {
+        transform: translate(-100vw,0);
+    }
+    100% {
+        transform: translate(0,0);
+    }
+}
+
+@keyframes Options-Menu {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(-100vw,0);
+    }
+}
+
+@keyframes Menu-Credits {
+    0% {
+        transform: translate(-100vw,0);
+    }
+    100% {
+        transform: translate(-100vw,-100vh);
+    }
+}
+
+@keyframes Credits-Menu {
+    0% {
+        transform: translate(-100vw,-100vh);
+    }
+    100% {
+        transform: translate(-100vw,0);
+    }
 }

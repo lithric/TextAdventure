@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>main menu</title>
+        <title>MainMenu</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -11,9 +11,29 @@
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div id="menu_options">
-            <button>Options</button>
+        <div id="start_container">
+            <section id="menu_section">
+                <div>
+                    <h1 class="title noselect">Insect to Sentience</h1>
+                </div>
+                <div id="menu_options">
+                    <button onclick="Start()">Play</button>
+                    <button onclick="Move('options')">Options</button>
+                    <button onclick="Move('credits')">Credits</button>
+                </div>
+            </section>
+            <section id="options_section">
+                <button onclick="Move('menu')">Back</button>
+            </section>
+            <section id="credits_section">
+                <button onclick="Move('menu')">Back</button>
+            </section>
         </div>
+        <div id="play_container" hidden>
+            <h1 id="prompt">hello</h1>
+            <button>button</button>
+        </div>
+        <script src="functions.js"></script>
         <script src="script.js" async defer></script>
     </body>
 </html>
