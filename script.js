@@ -9,7 +9,8 @@ var MenuCreditsAnim = "Menu-Credits 1s ease-in-out 0s 1 forwards";
 var OptionsMenuAnim = "Options-Menu 1s ease-in-out 0s 1 forwards";
 var CreditsMenuAnim = "Credits-Menu 1s ease-in-out 0s 1 forwards";
 
-var FadeAnim = "FadeToBlack 3s ease-out 0s 1 forwards";
+var FadeInAnim = "FadeIn 3s ease-out 0s 1 forwards";
+var FadeOutAnim = "FadeOut 3s ease-out 0s 1 forwards";
 
 var blinking;
 
@@ -30,7 +31,8 @@ function Move(cond) {
 
 function Start() {
     playContainer.hidden = false;
-    ChangeAnimPlay(FadeAnim);
+    ChangeAnimStart(FadeOutAnim);
+    ChangeAnimPlay(FadeInAnim);
     blinking = setInterval(() => {LineBlink()},500);
 }
 
