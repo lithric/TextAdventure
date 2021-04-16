@@ -34,5 +34,5 @@ function Start() {
     ChangeAnimPlay(FadeInAnim);
     LineBlink(true,promptText,"$");
     TypeText({text:"hello world",HTMLELM:promptText,delay:5000, att:"$"});
-    TypeText({text:"this",HTMLELM:promptText,delay:1000, att:"|"});
+    TypeText({text:"this",HTMLELM:promptText,delay:5000, att:"|"});
 }
