@@ -12,8 +12,6 @@ var CreditsMenuAnim = "Credits-Menu 1s ease-in-out 0s 1 forwards";
 var FadeInAnim = "FadeIn 3s ease-out 0s 1 forwards";
 var FadeOutAnim = "FadeOut 3s ease-out 0s 1 forwards";
 
-var blinking;
-
 AddMoveOption("options",MenuOptionsAnim);
 AddMoveOption("credits",MenuCreditsAnim);
 AddMoveOption("Moptions",OptionsMenuAnim);
@@ -30,27 +28,11 @@ function Move(cond) {
 }
 
 function Start() {
+    currentScreen = "play";
     playContainer.hidden = false;
     ChangeAnimStart(FadeOutAnim);
     ChangeAnimPlay(FadeInAnim);
-    blinking = setInterval(() => {LineBlink()},500);
-}
-
-var lineBlinker = false;
-function LineBlink(contin = true) {
-    if (contin) {
-        if (lineBlinker) {
-            promptText.innerHTML = promptText.innerHTML.slice(0,-1);
-        } else {
-            promptText.innerHTML += "|";
-        }
-    } else {
-        if (lineBlinker) {
-            promptText.innerHTML = promptText.innerHTML.slice(0,-1);
-            clearInterval(blinking);
-        } else {
-            clearInterval(blinking);
-        }
-    }
-    lineBlinker = !lineBlinker;
+    LineBlink(true,promptText,"$");
+    TypeText({text:"hello world",HTMLELM:promptText,delay:5000, att:"$"});
+    TypeText({text:"this",HTMLELM:promptText,delay:1000, att:"|"});
 }

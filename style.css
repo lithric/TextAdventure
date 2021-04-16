@@ -70,6 +70,12 @@ section#credits_section button:first-of-type {
     background-color: #000;
 }
 
+#play_container button:first-of-type {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 @keyframes FadeToWhite {
     0% {
         background-color: rgba(255,255,255,0);
